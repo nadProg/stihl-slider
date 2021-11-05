@@ -1,0 +1,119 @@
+.slider {
+  position: relative;
+
+  background: linear-gradient(
+    to right,
+    var(--background-main) 0%,
+    var(--background-main) calc(50% + var(--slider-shift)),
+    var(--background-accent) calc(50% - 330px),
+    var(--background-accent) 100%
+  );
+
+  overflow: hidden;
+}
+
+.slider__logo {
+  position: absolute;
+  z-index: 10;
+  top: 25px;
+  left: 40px;
+
+  svg {
+    fill: var(--color-accent);
+  }
+}
+
+.slider__controls {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 335px;
+  height: 90px;
+
+  display: flex;
+  background-color: var(--background-main);
+}
+
+.slider__control {
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slider__control:hover {
+  .arrow {
+    opacity: 0.5;
+  }
+
+  .arrow--left {
+    transform: scale(0.8) translate(-20%);
+  }
+
+  .arrow--right {
+    transform: scale(0.8) translate(20%);
+  }
+}
+
+.slider__pagination {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform-origin: top right;
+  transform: translate(calc(-100% - 35px), calc(-100% - 90px)) rotate(90deg);
+}
+
+.slider__item {
+  display: none;
+}
+
+.slider__item--current {
+  display: initial;
+}
+
+.slider__page {
+  position: relative;
+  display: none;
+}
+
+.slider__page--current {
+  display: initial;
+
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  .slider__page--current {
+    animation-name: page-fade-in;
+  }
+}
+
+.fade-out {
+  .slider__page--current {
+    animation-name: page-fade-out;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes page-fade-out {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: -100%;
+  }
+}

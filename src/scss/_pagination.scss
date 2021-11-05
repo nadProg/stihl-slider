@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 1;
+
+  overflow: hidden;
+}
+
+.pagination__current {
+  position: relative;
+  top: -0.1em;
+  padding: 0 12px;
+
+  font-size: 48px;
+  color: var(--color-main);
+}
+
+.pagination__total {
+  position: relative;
+  padding: 0 12px;
+
+  font-style: 24px;
+  color: var(--background-main);
+}
+
+.pagination__total::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 50px;
+  transform: translate3d(-50%);
+
+  background-color: var(--background-main);
+}

@@ -1,0 +1,63 @@
+section.container.slider
+  h2.visually-hidden Слайдер
+
+  a.slider__logo(href="index.html")
+    svg(width=150 height=40)
+      use(href="#logo")
+
+  .slider__content
+    .slider__item
+      article.product
+
+        h3.product__title Бензопилы
+
+        .product__slogan-wrapper
+          p.product__slogan Возьми Stihl -
+          p.product__slogan почуствуй мощь!
+
+        .product__text-wrapper
+          p.product__text
+            |Единственное условия - регистрация продукта, которая
+            <br>
+            | займет меньше минуты и будет сделана прямо в
+            <br>
+            | магазине в момент Вашей покупки!
+
+        a.product__btn.btn(href="#more")
+          span Узнать больше
+
+        picture
+          source(srcset="img/promo-01.webp" type="image/webp")
+          img.product__picture(src="img/promo-01.png" alt="Безопила Stihl")
+
+    .slider__item
+      article.product
+
+        h3.product__title Мотокосы
+
+        .product__slogan-wrapper
+          p.product__slogan Возьми Stihl -
+          p.product__slogan почуствуй мощь!
+
+        .product__text-wrapper
+          p.product__text
+            | Промо текст - почуствуй мощь!
+
+        a.product__btn.btn(href="#more")
+          span Узнать больше
+
+        picture
+          source(srcset="img/promo-02.webp" type="image/webp")
+          img.product__picture(src="img/promo-02.png" alt="Мотокосы Stihl")
+
+  .slider__controls
+    button.slider__control.slider__control--prev(aria-label="Назад")
+      i.arrow.arrow--left
+    button.slider__control.slider__control--next(aria-label="Вперед")
+      i.arrow.arrow--right
+
+  .slider__pagination.pagination
+    .pagination__current
+      span.slider__page.pagination__number 01
+      span.slider__page.pagination__number 02
+    .slider__total.pagination__total 02
